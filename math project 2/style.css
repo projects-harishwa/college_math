@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body
+{
+	background: url(bg_79.gif);
+	background-repeat: none;
+	background-attachment: fixed;
+	background-size: cover;
+}
+html
+{
+	scroll-behavior: smooth;
+	-webkit-tap-highlight-color: transparent;
+}
+.RangeKutta
+{
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	outline: 1px solid white;
+	padding: 10px 10px;
+}
+.RangeKutta h1,legend
+{
+	color: #fff;
+}
+.RangeKutta h1
+{
+	cursor: pointer;
+	font-family: "Figtree", serif;
+	font-size: 1em;
+	font-weight: 600;
+	transition: 0.5s;
+}
+.RangeKutta ion-icon
+{
+	font-size: 1.3em;
+	position: absolute;
+	margin-left: 120px;
+	transition: 0.5s;
+}
+.arrowrotate
+{
+	transform: rotate(180deg);
+	font-size: 2.5em;
+}
+.RangeKutta h1:hover
+{
+	color: red;
+}
+fieldset 
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.RangeKutta legend
+{
+	text-align: center;
+}
+.RangeKutta input
+{
+	outline: none;
+	border: none;
+	width: 100%;
+	height:30px;
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	text-align: center;
+	margin-bottom: 20px;
+	box-shadow: 1px 1px 10px white;
+}
+.RangeKutta button
+{
+	font-size: 1.2em;
+	margin-left: 50%;
+	margin-top: 20px;
+	transform: translate(-50%,-50%);
+	cursor: pointer;
+	background: #fff;
+	padding: 5px 10px;
+	color: #000;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 1px 1px 10px white;
+
+}
+#menuList
+{
+	min-height: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: 0.7s cubic-bezier(0.38, 0, 0, 0.97);
+}
+
+.Newton
+{
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	outline: 1px solid white;
+	padding: 10px 10px;
+	width: 23%;
+}
+.Newton h1
+{
+	color: #fff;
+	cursor: pointer;
+	font-family: "Figtree", serif;
+	font-size: 1em;
+	font-weight: 600;
+	transition: 0.5s;
+}
+.Newton h1:hover
+{
+	color: red;
+}
+.Newton ion-icon
+{
+	font-size: 1.2em;
+	position: absolute;
+	margin-left: 80px;
+}
+
+#move
+{
+	transition: 0.5s;
+}
+header
+{
+	font-family: "Figtree", serif;
+	background: -webkit-linear-gradient(#fff,#999);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 1.2em;
+	font-weight: 600;
+
+}
+
+header span 
+{
+	font-size: 2.6em;
+	font-weight: 500;
+	font-family: "Unbounded", serif;
+	background: -webkit-linear-gradient(left,#fff,#999);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.docs
+{
+	text-align: center;
+	color: #fff;
+	font-family: "Figtree", serif;
+	position: absolute;
+	top: 47%;
+	margin-top: 20px;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.docs p 
+{
+	opacity: 80%;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: 600;
+}
+.docs span a
+{
+	color: #add836;
+	font-weight: 700;
+	word-spacing: 1.5em;
+	font-size: 1.2em;
+	outline: 1px solid white;
+	padding: 2px 2px;
+}
+@media only screen and (max-width: 480px)
+{
+	header
+	{
+		position: absolute;
+		top: 35%;
+		font-size: 0.8em;
+	}
+	header span 
+	{
+		font-size: 2.5em;
+	}
+	.docs
+	{
+		font-size: 0.7em;
+		width: 100%;
+		position: absolute;
+		top: 43%;
+	}
+	.Newton 
+	{
+		font-size: 0.8em;
+		width: 80%;
+	}
+	.Newton ion-icon
+	{
+		margin-left: 70px;
+	}
+	.RangeKutta
+	{
+		font-size: 0.8em;
+		width: 80%;
+	}
+	.RangeKutta ion-icon
+	{
+		margin-left: 100px;
+	}
+}

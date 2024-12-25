@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>Numerical Methods</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+	<header>
+		Solve the equation as per the specific <br><span>NUMERICAL METHOD</span>
+	</header>
+
+	<div class="docs">
+		<p>[Read the <span><a href="#">documentation</a></span> before trying to use the tool]</p>
+	</div>
+
+	<div class="Newton"id="move">
+		<h1 >Newton-Raphson Method<ion-icon name="arrow-redo-outline"></ion-icon></h1>
+	</div>
+
+	<div class="RangeKutta">
+		<h1 onclick="range()">RangeKutta Method<ion-icon name="chevron-down-outline" id="arrowrotate"></ion-icon></h1>
+		<ul id="menuList">
+		<fieldset>
+			<legend>Enter the function</legend><br>
+			<input type="text" required><br>
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter the number of decimal places</legend><br>
+			<input type="text" required><br>
+		</fieldset>
+
+		<button>Solve!</button>
+		</ul>
+	</div>
+
+
+	
+
+
+
+
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+	<script>
+		var menuList=document.getElementById('menuList');
+		menuList.style.maxHeight="0px";
+
+		function range(){
+			if (menuList.style.maxHeight=="0px")
+			{
+				menuList.style.maxHeight="380px";
+				menuList.style.scale="100%"
+				move.style.opacity="0%";
+				arrowrotate.classList.add("arrowrotate");
+			}
+			else
+			{
+				menuList.style.maxHeight="0px";
+				menuList.style.scale="20%"
+				move.style.opacity="100%";
+				arrowrotate.classList.remove("arrowrotate");
+
+			}
+		}
+
+
+	</script>
+
+</body>
+</html>
