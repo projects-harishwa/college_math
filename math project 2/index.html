@@ -17,26 +17,101 @@
 		<p>[Read the <span><a href="#">documentation</a></span> before trying to use the tool]</p>
 	</div>
 
+<!---Newton Raphson Redirect----->
 	<div class="Newton"id="move">
 		<h1 >Newton-Raphson Method<ion-icon name="arrow-redo-outline"></ion-icon></h1>
 	</div>
+<!---Newton Raphson Redirect----->
 
-	<div class="RangeKutta">
-		<h1 onclick="range()">RangeKutta Method<ion-icon name="chevron-down-outline" id="arrowrotate"></ion-icon></h1>
+
+<!---Rangekutta----->
+	<div class="RangeKutta" id="Rangeku">
+		<h1 onclick="range()">RangeKutta 4th Order Method<ion-icon name="chevron-down-outline" id="arrowrotate"></ion-icon></h1>
 		<ul id="menuList">
 		<fieldset>
-			<legend>Enter the function</legend><br>
-			<input type="text" required><br>
+			<legend>Enter the function</legend>
+			<input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="equation">
 		</fieldset>
 
 		<fieldset>
-			<legend>Enter the number of decimal places</legend><br>
-			<input type="text" required><br>
+			<legend>Enter initial value of x (x₀)</legend>
+			<input type="number" required placeholder="Initial x" id="x0">
 		</fieldset>
 
-		<button>Solve!</button>
+		<fieldset>
+			<legend>Enter initial value of y (y₀)</legend>
+			<input type="number" required placeholder="Initial y" id="y0">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter step length</legend>
+			<input type="number" required placeholder="Step length" id="h">
+		</fieldset>
+
+		<fieldset>
+			<legend class="font-adjust">Enter value of x at which y is to be found </legend>
+			<input type="number" required placeholder="y(x)" id="xg">
+		</fieldset>
+
+		<button onclick="calculateRK4()">Solve!</button>
+		<h2 id="result"></h2>
+		</ul>
+
+	</div>
+<!---Rangekutta----->
+
+
+
+<!---Trapezoidal----->
+		<div class="Trapezoidal" id="Trape">
+		<h1 onclick="range_tr()">Trapezoidal Double Integral<ion-icon name="chevron-down-outline" id="arrowrotate_tr"></ion-icon></h1>
+		<ul id="menuListtr">
+		<fieldset>
+			<legend>Enter the function</legend>
+			<input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="equation">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter initial value of x (x₀)</legend>
+			<input type="number" required placeholder="Initial x" id="x0">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter initial value of y (y₀)</legend>
+			<input type="number" required placeholder="Initial y" id="y0">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter step length</legend>
+			<input type="number" required placeholder="Step length" id="h">
+		</fieldset>
+
+		<fieldset>
+			<legend class="font-adjust">Enter value of x at which y is to be found </legend>
+			<input type="number" required placeholder="y(x)" id="xg">
+		</fieldset>
+
+		<button onclick="">Solve!</button>
+		<h2 id="result"></h2>
 		</ul>
 	</div>
+<!---Trapezoidal----->
+
+
+<!---Navbar section----->
+	<div class="about">
+		<ul>
+			<a href="#">Home&nbsp;<ion-icon name="home"></ion-icon></h3></a>
+			<a href="#">About&nbsp;<ion-icon name="information-circle-sharp"></ion-icon></h3></a>
+		</ul>	
+	</div>
+<!---Navbar section----->
+
+
+
+	<footer>
+		<h5>hello</h5>
+	</footer>
 
 
 	
@@ -44,22 +119,30 @@
 
 
 
-
+<!---IONICONS----->
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!---IONICONS----->
 
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
+
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script><!---To be deleted----->
+
+
+<!---Script for touch animations----->
 	<script>
+		//Rangekutta ------------------------------------------
 		var menuList=document.getElementById('menuList');
 		menuList.style.maxHeight="0px";
 
 		function range(){
 			if (menuList.style.maxHeight=="0px")
 			{
-				menuList.style.maxHeight="380px";
+				menuList.style.maxHeight="650px";
 				menuList.style.scale="100%"
 				move.style.opacity="0%";
+				Trape.style.opacity="0%";
 				arrowrotate.classList.add("arrowrotate");
 			}
 			else
@@ -67,13 +150,47 @@
 				menuList.style.maxHeight="0px";
 				menuList.style.scale="20%"
 				move.style.opacity="100%";
+				Trape.style.opacity="100%";
 				arrowrotate.classList.remove("arrowrotate");
 
 			}
 		}
+		//Rangekutta ------------------------------------------
+
+
+		//Trapezoidal ------------------------------------------
+		var menuListtr=document.getElementById('menuListtr');
+		menuListtr.style.maxHeight="0px";
+
+		function range_tr(){
+			if (menuListtr.style.maxHeight=="0px")
+			{
+				menuListtr.style.maxHeight="650px";
+				menuListtr.style.scale="100%"
+				move.style.opacity="0%";
+				Rangeku.style.opacity="0%";
+				arrowrotate_tr.classList.add("arrowrotate");
+			}
+			else
+			{
+				menuListtr.style.maxHeight="0px";
+				menuListtr.style.scale="20%"
+				move.style.opacity="100%";
+				Rangeku.style.opacity="100%";
+				arrowrotate_tr.classList.remove("arrowrotate");
+
+			}
+		}
+		//Trapezoidal ------------------------------------------
 
 
 	</script>
+<!---Script for touch animations----->
+
+
+<!---External Script----->
+	<script src="script.js"></script>
+<!---External Script----->
 
 </body>
 </html>

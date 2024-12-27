@@ -18,20 +18,25 @@ html
 	scroll-behavior: smooth;
 	-webkit-tap-highlight-color: transparent;
 }
-.RangeKutta
+.Trapezoidal
+{
+	margin-top: 10%;
+}
+.RangeKutta, .Trapezoidal
 {
 	position: absolute;
-	top: 80%;
+	width:320px;
+	top: 120%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	outline: 1px solid white;
 	padding: 10px 10px;
 }
-.RangeKutta h1,legend
+.RangeKutta h1,legend , .Trapezoidal h1,legend
 {
 	color: #fff;
 }
-.RangeKutta h1
+.RangeKutta h1,.Trapezoidal h1
 {
 	cursor: pointer;
 	font-family: "Figtree", serif;
@@ -39,11 +44,12 @@ html
 	font-weight: 600;
 	transition: 0.5s;
 }
+.Trapezoidal ion-icon{margin-left: 70px;  font-size: 1.3em;  position: absolute; transition: 0.5s;}
 .RangeKutta ion-icon
 {
 	font-size: 1.3em;
 	position: absolute;
-	margin-left: 120px;
+	margin-left: 48px;
 	transition: 0.5s;
 }
 .arrowrotate
@@ -51,32 +57,32 @@ html
 	transform: rotate(180deg);
 	font-size: 2.5em;
 }
-.RangeKutta h1:hover
-{
-	color: red;
-}
+
 fieldset 
 {
 	margin-top: 20px;
 	margin-bottom: 20px;
+	font-family: "Figtree", serif;
 }
-.RangeKutta legend
+.RangeKutta legend,.Trapezoidal legend
 {
 	text-align: center;
 }
-.RangeKutta input
+.RangeKutta input,.Trapezoidal input
 {
+	font-family: "Figtree", serif;
 	outline: none;
 	border: none;
 	width: 100%;
 	height:30px;
-	font-size: 1.5em;
+	font-size: 1em;
+	font-weight: 700;
 	margin-bottom: 10px;
 	text-align: center;
 	margin-bottom: 20px;
 	box-shadow: 1px 1px 10px white;
 }
-.RangeKutta button
+.RangeKutta button, .Trapezoidal button
 {
 	font-size: 1.2em;
 	margin-left: 50%;
@@ -99,11 +105,19 @@ fieldset
 	overflow: hidden;
 	transition: 0.7s cubic-bezier(0.38, 0, 0, 0.97);
 }
+#menuListtr
+{
+	min-height: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: 0.7s cubic-bezier(0.38, 0, 0, 0.97);
+}
+
 
 .Newton
 {
 	position: absolute;
-	top: 70%;
+	top: 110%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	outline: 1px solid white;
@@ -130,7 +144,7 @@ fieldset
 	margin-left: 80px;
 }
 
-#move
+#move, #Trape, #Rangeku
 {
 	transition: 0.5s;
 }
@@ -186,6 +200,54 @@ header span
 	outline: 1px solid white;
 	padding: 2px 2px;
 }
+
+::placeholder
+{
+	font-size: 0.8em;
+}
+footer
+{
+	position: absolute;
+	top: 150%;
+}
+#result
+{
+	color: #fff;
+	font-size: 0.8em;
+	font-family: "Figtree", serif;	
+	text-align: center;
+}
+.about 
+{
+	position: fixed;
+	backdrop-filter: blur(20px);
+	width: 20%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	top: 5%;
+	padding: 10px;
+	outline: 1px solid white;
+	color: #fff;
+	border-radius: 20px;
+}
+.about ul 
+{
+	display: flex;
+	justify-content: safe center;
+	gap: 50px;
+}
+.about a
+{
+	color: #fff;
+	text-decoration: none;
+	font-family: "Figtree", serif;
+	cursor: pointer;
+}
+.about ion-icon
+{
+	font-size: 1.2em;
+	position: absolute;
+}
 @media only screen and (max-width: 480px)
 {
 	header
@@ -214,13 +276,24 @@ header span
 	{
 		margin-left: 70px;
 	}
+	.Trapezoidal
+	{
+		font-size: 0.8em;
+		width: 80%;
+		position: absolute;
+		top: 130%;
+	}
 	.RangeKutta
 	{
 		font-size: 0.8em;
 		width: 80%;
 	}
-	.RangeKutta ion-icon
+	.RangeKutta ion-icon, .Trapezoidal ion-icon
 	{
-		margin-left: 100px;
+		margin-left: 43px;
+	}
+	.font-adjust
+	{
+    	white-space: nowrap;
 	}
 }
