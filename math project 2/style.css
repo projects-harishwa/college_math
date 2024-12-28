@@ -144,7 +144,7 @@ fieldset
 	margin-left: 80px;
 }
 
-#move, #Trape, #Rangeku
+#move, #Trape, #Rangeku, #NumInt
 {
 	transition: 0.5s;
 }
@@ -208,7 +208,7 @@ header span
 footer
 {
 	position: absolute;
-	top: 150%;
+	top: 450%;
 }
 #result
 {
@@ -217,24 +217,36 @@ footer
 	font-family: "Figtree", serif;	
 	text-align: center;
 }
+#details 
+{
+	color: #fff;
+	text-align: center;
+	line-height: 0.7em;
+	margin-bottom: 20px;
+	overflow-y: scroll;
+	max-height: 150px;
+	backdrop-filter: blur(40px);
+	border-radius: 10px;
+	padding: 5px 5px;
+}
 .about 
 {
 	position: fixed;
 	backdrop-filter: blur(20px);
-	width: 20%;
+	width: auto;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	top: 5%;
-	padding: 10px;
+	padding: 10px 30px;
 	outline: 1px solid white;
 	color: #fff;
-	border-radius: 20px;
+	border-radius: 5px;
 }
 .about ul 
 {
 	display: flex;
-	justify-content: safe center;
-	gap: 50px;
+	justify-content: space-between;
+	gap: 100px;
 }
 .about a
 {
@@ -242,11 +254,33 @@ footer
 	text-decoration: none;
 	font-family: "Figtree", serif;
 	cursor: pointer;
+	font-weight: 600;
+	font-size: 1.2em;
+	margin-left: -15px;
 }
 .about ion-icon
 {
 	font-size: 1.2em;
 	position: absolute;
+}
+.NumInt
+{
+	position: absolute;
+	top: 130%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-family: "Figtree", serif;
+	font-size: 1.5em;
+	margin-top: 20px;
+	margin-left: -40px;
+}
+.NumInt .line 
+{
+	height: 2px;
+	width: 80%;
+	background: #fff;
+	border-radius: 20px;
 }
 @media only screen and (max-width: 480px)
 {
@@ -295,5 +329,23 @@ footer
 	.font-adjust
 	{
     	white-space: nowrap;
+	}
+	#result
+	{
+		font-size: 1em;
+	}
+	#details
+	{
+		font-size: 1.2em;
+	}
+	.NumInt
+	{
+		font-size: 1.15em;
+		margin-top: -10px;
+	}
+	.about 
+	{
+		font-size: 0.7em;
+		z-index: 2;
 	}
 }

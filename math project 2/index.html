@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<!---Navbar section----->
+	<div class="about">
+		<ul>
+			<a href="#">About&nbsp;<ion-icon name="information-circle-sharp"></ion-icon></a>
+			<a href="#">Docs&nbsp;<ion-icon name="document-text"></ion-icon></a>
+		</ul>	
+	</div>
+<!---Navbar section----->
+
+
 
 	<header>
 		Solve the equation as per the specific <br><span>NUMERICAL METHOD</span>
@@ -53,14 +63,15 @@
 			<input type="number" required placeholder="y(x)" id="xg">
 		</fieldset>
 
-		<button onclick="calculateRK4()">Solve!</button>
-		<h2 id="result"></h2>
+		<button onclick="calculateRK4()" >Solve!</button>
+		<h2 id="result"></h2><br>
+		 <pre id="details"></pre>
 		</ul>
 
 	</div>
 <!---Rangekutta----->
 
-
+		<div class="NumInt" id="NumInt">Numerical Integration:<div class="line"></div></div>
 
 <!---Trapezoidal----->
 		<div class="Trapezoidal" id="Trape">
@@ -68,44 +79,36 @@
 		<ul id="menuListtr">
 		<fieldset>
 			<legend>Enter the function</legend>
-			<input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="equation">
+			<input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="functionInput">
 		</fieldset>
 
 		<fieldset>
-			<legend>Enter initial value of x (x₀)</legend>
-			<input type="number" required placeholder="Initial x" id="x0">
+			<legend>Enter lower limit x (x₀)</legend>
+			<input type="number" required placeholder="Lower limit of x" id="xLower">
 		</fieldset>
 
 		<fieldset>
-			<legend>Enter initial value of y (y₀)</legend>
-			<input type="number" required placeholder="Initial y" id="y0">
+			<legend>Enter upper limit x </legend>
+			<input type="number" required placeholder="Upper limit of x" id="xUpper">
 		</fieldset>
 
 		<fieldset>
-			<legend>Enter step length</legend>
-			<input type="number" required placeholder="Step length" id="h">
+			<legend>Enter lower limit of y(y₀) </legend>
+			<input type="number" required placeholder="Lower limit of y" id="yLower">
 		</fieldset>
 
 		<fieldset>
-			<legend class="font-adjust">Enter value of x at which y is to be found </legend>
-			<input type="number" required placeholder="y(x)" id="xg">
+			<legend class="font-adjust">Enter upper limit of y </legend>
+			<input type="number" required placeholder="Upper limit of y" id="yUpper">
 		</fieldset>
 
-		<button onclick="">Solve!</button>
-		<h2 id="result"></h2>
+		<button onclick="calculateIntegral()" >Solve!</button>
+		<h2 id="result_trap"></h2>
 		</ul>
 	</div>
 <!---Trapezoidal----->
 
 
-<!---Navbar section----->
-	<div class="about">
-		<ul>
-			<a href="#">Home&nbsp;<ion-icon name="home"></ion-icon></h3></a>
-			<a href="#">About&nbsp;<ion-icon name="information-circle-sharp"></ion-icon></h3></a>
-		</ul>	
-	</div>
-<!---Navbar section----->
 
 
 
@@ -139,18 +142,26 @@
 		function range(){
 			if (menuList.style.maxHeight=="0px")
 			{
-				menuList.style.maxHeight="650px";
+				menuList.style.maxHeight = "850px";
 				menuList.style.scale="100%"
-				move.style.opacity="0%";
-				Trape.style.opacity="0%";
+				move.style.opacity="0%";//move
+				move.style.scale="0%";//move
+				Trape.style.opacity="0%";//Trape
+				Trape.style.scale="0%";//Trape
+				NumInt.style.opacity="0%";//NumInt
+				NumInt.style.scale="0%";//NumInt
 				arrowrotate.classList.add("arrowrotate");
 			}
 			else
 			{
 				menuList.style.maxHeight="0px";
 				menuList.style.scale="20%"
-				move.style.opacity="100%";
-				Trape.style.opacity="100%";
+				move.style.opacity="100%";//move
+				move.style.scale="100%";//move
+				Trape.style.opacity="100%";//Trape
+				Trape.style.scale="100%";//Trape
+				NumInt.style.opacity="100%";//NumInt
+				NumInt.style.scale="100%";//NumInt
 				arrowrotate.classList.remove("arrowrotate");
 
 			}
@@ -167,16 +178,24 @@
 			{
 				menuListtr.style.maxHeight="650px";
 				menuListtr.style.scale="100%"
-				move.style.opacity="0%";
-				Rangeku.style.opacity="0%";
+				move.style.opacity="0%";//move
+				move.style.scale="0%";//move
+				Rangeku.style.opacity="0%";//range
+				Rangeku.style.scale="0%"//range
+				NumInt.style.opacity="0%";//NumInt
+				NumInt.style.scale="0%";//NumInt
 				arrowrotate_tr.classList.add("arrowrotate");
 			}
 			else
 			{
 				menuListtr.style.maxHeight="0px";
 				menuListtr.style.scale="20%"
-				move.style.opacity="100%";
-				Rangeku.style.opacity="100%";
+				move.style.opacity="100%";//move
+				move.style.scale="100%";//move
+				Rangeku.style.opacity="100%";//range
+				Rangeku.style.scale="100%"//range
+				NumInt.style.opacity="100%";//NumInt
+				NumInt.style.scale="100%";//NumInt
 				arrowrotate_tr.classList.remove("arrowrotate");
 
 			}
@@ -190,6 +209,7 @@
 
 <!---External Script----->
 	<script src="script.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
 <!---External Script----->
 
 </body>
